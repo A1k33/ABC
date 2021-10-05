@@ -1,0 +1,9 @@
+bool check(string s){
+    int dem=0;
+    map<char,int> d;
+    for (int i= 0;i<s.size();i++) {d[s[i]]++;}
+    for (auto x: d ) {
+        if (d['a']+d['s']+d['d']+d['f']+d['g']+d['h']+d['j']+d['k']+d['l'] == s.size()) return 1;
+    }
+    
+}
