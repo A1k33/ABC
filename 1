@@ -1,9 +1,23 @@
+#include<bits/stdc++.h>
 bool check(string s){
-    int dem=0;
+    
     map<char,int> d;
     for (int i= 0;i<s.size();i++) {d[s[i]]++;}
-    for (auto x: d ) {
-        if (d['a']+d['s']+d['d']+d['f']+d['g']+d['h']+d['j']+d['k']+d['l'] == s.size()) return 1;
-    }
+    
+        if (d['a']+d['s']+d['d']+d['f']+d['g']+d['h']+d['j']+d['k']+d['l'] +d[':'] +d[';'] == s.size()) return 1;
+        if (d['q']+d['w']+d['e']+d['r']+d['t']+d['y']+d['i']+d['o']+d['p']+d['['] +d[']']   == s.size()) return 1;
+        if (d['z']+d['x']+d['c']+d['v']+d['b']+d['n']+d['m']+d['<'] +d['>'] +d[','] +d['.'] +d['?'] +d['/']  == s.size()) return 1;
+        if (d['0']+d['1']+d['2']+d['3']+d['4']+d['5']+d['6']+d['7']+d['8']+d['9']+d['`'] +d['-']+d['=']== s.size()) return 1;
+        return 0;
+    
+    
+}
+int findWords (char * path) {
+    ifstream input(path);
+    string s;
+    int dem =0;
+    while (input>>s){
+    if (check(s)) dem++;}
+    return dem;
     
 }
